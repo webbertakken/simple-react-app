@@ -3,7 +3,11 @@
 /.vscode
 
 # Private variables
+*.log
 serviceAccount.json
+
+# Firebase
+/.firebase
 
 # dependencies
 /node_modules

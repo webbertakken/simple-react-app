@@ -24,3 +24,27 @@ Opinionated lightweight setup of nextjs on firebase with some extras.
 
 - Enable Firestore in your Firebase project
 - Adjust the database url to reflect your project/database id
+
+## Deploy
+
+#### Prerequisites
+
+- Upgrade Firebase project to Blaze (pay-as-you-go) plan
+- Install firebase cli
+
+```
+npm install -g firebase-tools
+```
+
+#### Login
+
+```
+firebase login
+```
+
+#### Build and deploy
+
+```
+yarn deploy
+```
+
