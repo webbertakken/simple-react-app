@@ -1,11 +1,12 @@
-import { verifyIdToken } from '../../utils/auth/firebaseAdmin'
+import { verifyIdentityToken } from '../../admin/verifyIdentityToken'
+
 const favoriteFoods = ['pizza', 'burger', 'chips', 'tortilla']
 
 const getFood = async (req, res) => {
   const token = req.headers.token
 
   try {
-    await verifyIdToken(token)
+    await verifyIdentityToken(token)
     return res.status(200).json({
       food: favoriteFoods[Math.floor(Math.random() * favoriteFoods.length)],
     })

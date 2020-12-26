@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import Link from 'next/link'
-import { useUser } from '../utils/auth/useUser'
+import { useUser } from '../model/user/useUser'
 
 const fetcher = (url, token) =>
   fetch(url, {
@@ -50,7 +50,7 @@ const Index = () => {
           <a>Another example page</a>
         </Link>
       </div>
-      {error && <div>Failed to fetch food!</div>}
+      {error && <div>Failed to fetch food! {error.message}</div>}
       {data && !error ? (
         <div>Your favorite food is {data.food}.</div>
       ) : (

@@ -2,6 +2,9 @@
 /.idea
 /.vscode
 
+# Private variables
+serviceAccount.json
+
 # dependencies
 /node_modules
 /.pnp

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import firebase from 'firebase/app'
 import 'firebase/auth'
-import initFirebase from '../auth/initFirebase'
+import { getFirebaseInstance } from '../../app/getFirebaseInstance'
 import {
   removeUserCookie,
   setUserCookie,
@@ -10,7 +10,7 @@ import {
 } from './userCookies'
 import { mapUserData } from './mapUserData'
 
-initFirebase()
+getFirebaseInstance()
 
 const useUser = () => {
   const [user, setUser] = useState()

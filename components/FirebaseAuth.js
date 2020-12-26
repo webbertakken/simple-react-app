@@ -1,12 +1,12 @@
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
 import firebase from 'firebase/app'
 import 'firebase/auth'
-import initFirebase from '../utils/auth/initFirebase'
-import { setUserCookie } from '../utils/auth/userCookies'
-import { mapUserData } from '../utils/auth/mapUserData'
+import { getFirebaseInstance } from '../app/getFirebaseInstance'
+import { setUserCookie } from '../model/user/userCookies'
+import { mapUserData } from '../model/user/mapUserData'
 
 // Init the Firebase app.
-initFirebase()
+getFirebaseInstance()
 
 const firebaseAuthConfig = {
   signInFlow: 'popup',
@@ -14,7 +14,7 @@ const firebaseAuthConfig = {
   // https://github.com/firebase/firebaseui-web#configure-oauth-providers
   signInOptions: [
     {
-      provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       requireDisplayName: false,
     },
   ],
@@ -31,10 +31,7 @@ const firebaseAuthConfig = {
 const FirebaseAuth = () => {
   return (
     <div>
-      <StyledFirebaseAuth
-        uiConfig={firebaseAuthConfig}
-        firebaseAuth={firebase.auth()}
-      />
+      <StyledFirebaseAuth uiConfig={firebaseAuthConfig} firebaseAuth={firebase.auth()} />
     </div>
   )
 }
