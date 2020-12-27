@@ -1,8 +1,8 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
 import { verifyIdentityToken } from '../../admin/verifyIdentityToken'
 
 const favoriteFoods = ['pizza', 'burger', 'chips', 'tortilla']
-
-const getFood = async (req, res) => {
+const getFood = async (req: NextApiRequest, res: NextApiResponse) => {
   const token = req.headers.token
 
   try {

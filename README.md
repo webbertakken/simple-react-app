@@ -48,3 +48,18 @@ firebase login
 yarn deploy
 ```
 
+## Customise
+
+#### Icons part 1
+
+- Generate the required formats at [https://www.favicon-generator.org/](https://www.favicon-generator.org/)
+- Copy everything **except** `browserconfig.xml` and `manifest.json` to `images/icons` and overwrite all files.
+
+#### Icons part 2
+
+- Generate a manifest file and more icons at [https://manifest-gen.netlify.app/](https://manifest-gen.netlify.app/)
+- Place the resulting `manifest.json` and `images` folder in `/public` (overwrite existing folders and files)
+
+#### Meta information
+
+- Change the variables in `M.tsx`

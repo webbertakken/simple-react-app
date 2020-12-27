@@ -21,7 +21,7 @@ const firebaseAuthConfig = {
   signInSuccessUrl: '/',
   credentialHelper: 'none',
   callbacks: {
-    signInSuccessWithAuthResult: async ({ user }, redirectUrl) => {
+    signInSuccessWithAuthResult: async ({ user } /*, redirectUrl */) => {
       const userData = await mapUserData(user)
       setUserCookie(userData)
     },
@@ -31,7 +31,10 @@ const firebaseAuthConfig = {
 const FirebaseAuth = () => {
   return (
     <div>
-      <StyledFirebaseAuth uiConfig={firebaseAuthConfig} firebaseAuth={firebase.auth()} />
+      <StyledFirebaseAuth
+        uiConfig={firebaseAuthConfig}
+        firebaseAuth={firebase.auth()}
+      />
     </div>
   )
 }

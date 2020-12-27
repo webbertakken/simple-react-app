@@ -9,6 +9,10 @@ serviceAccount.json
 # Firebase
 /.firebase
 
+# Service worker
+public/sw.js
+public/workbox-*.js
+
 # dependencies
 /node_modules
 /.pnp
