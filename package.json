@@ -10,6 +10,9 @@
     "deploy": "yarn build && cross-env NODE_ENV=production firebase deploy --only=\"functions,hosting\""
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
+    "clsx": "^1.1.1",
     "cross-env": "^7.0.3",
     "firebase": "^7.15.5",
     "firebase-admin": "^9.4.2",

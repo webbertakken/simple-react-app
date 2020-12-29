@@ -13,7 +13,7 @@ import { mapUserData } from './mapUserData'
 getFirebaseInstance()
 
 const useUser = () => {
-  const [user, setUser] = useState()
+  const [user, setUser] = useState(undefined)
   const router = useRouter()
 
   const logout = async () => {

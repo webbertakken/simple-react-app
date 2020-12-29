@@ -1,9 +1,13 @@
-const name = 'NextFirebasePlus'
-const title = 'Next Firebase Plus App'
-const description = 'Demonstrating some integrations'
-const domainUrl = 'https://next-firebase-plus.web.app'
-const creatorTwitter = '@webbertakken'
-const themeColor = '#e011c1'
+import config from '../../app/config'
+
+const {
+  name,
+  title,
+  description,
+  domainUrl,
+  creatorTwitter,
+  themeColor,
+} = config
 
 // noinspection HtmlUnknownTarget
 const MetaTags = () => (

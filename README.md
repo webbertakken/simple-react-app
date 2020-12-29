@@ -62,4 +62,4 @@ yarn deploy
 
 #### Meta information
 
-- Change the variables in `MetaTags.tsx`
+- Change the variables in `app/config.ts`
