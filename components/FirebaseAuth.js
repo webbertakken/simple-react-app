@@ -1,7 +1,7 @@
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
 import firebase from 'firebase/app'
 import 'firebase/auth'
-import { getFirebaseInstance } from '../app/getFirebaseInstance'
+import { getFirebaseInstance } from '../core/config/getFirebaseInstance'
 import { setUserCookie } from '../model/user/userCookies'
 import { mapUserData } from '../model/user/mapUserData'
 
