@@ -1,13 +1,6 @@
-import config from '../../core/config/config'
+import config from '@/core/config'
 
-const {
-  name,
-  title,
-  description,
-  domainUrl,
-  creatorTwitter,
-  themeColor,
-} = config
+const { name, title, description, domainUrl, creatorTwitter, themeColor } = config
 
 // noinspection HtmlUnknownTarget
 const MetaTags = () => (
@@ -39,10 +32,7 @@ const MetaTags = () => (
     <meta name="twitter:url" content={domainUrl} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta
-      name="twitter:image"
-      content={`${domainUrl}/images/icons/android-chrome-192x192.png`}
-    />
+    <meta name="twitter:image" content={`${domainUrl}/images/icons/android-chrome-192x192.png`} />
     <meta name="twitter:creator" content={creatorTwitter} />
 
     {/* open graph */}
@@ -51,10 +41,7 @@ const MetaTags = () => (
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content={name} />
     <meta property="og:url" content={domainUrl} />
-    <meta
-      property="og:image"
-      content={`${domainUrl}/images/icons/apple-touch-icon.png`}
-    />
+    <meta property="og:image" content={`${domainUrl}/images/icons/apple-touch-icon.png`} />
   </>
 )
 
