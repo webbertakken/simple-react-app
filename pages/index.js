@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import Link from 'next/link'
-import { useUser } from '../model/user/useUser'
+import { useUser } from 'reactfire'
 
 const fetcher = (url, token) =>
   fetch(url, {
@@ -10,12 +10,11 @@ const fetcher = (url, token) =>
   }).then((res) => res.json())
 
 const Index = () => {
-  const { user, logout } = useUser()
-  const { data, error } = useSWR(
-    user ? ['/api/getFood', user.token] : null,
-    fetcher
-  )
-  if (!user) {
+  // const { data: user } = useUser()
+  // const token = await user.getIdToken()
+  //
+  // const { data, error } = useSWR(user ? ['/api/getFood', token] : null, fetcher)
+  if (true) {
     return (
       <>
         <p>Hi there!</p>
@@ -40,7 +39,7 @@ const Index = () => {
             textDecoration: 'underline',
             cursor: 'pointer',
           }}
-          onClick={() => logout()}
+          onClick={() => {}}
         >
           Log out
         </p>
@@ -51,11 +50,7 @@ const Index = () => {
         </Link>
       </div>
       {error && <div>Failed to fetch food! {error.message}</div>}
-      {data && !error ? (
-        <div>Your favorite food is {data.food}.</div>
-      ) : (
-        <div>Loading...</div>
-      )}
+      {data && !error ? <div>Your favorite food is {data.food}.</div> : <div>Loading...</div>}
     </div>
   )
 }

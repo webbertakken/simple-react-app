@@ -1,12 +1,10 @@
-import FirebaseAuth from '../components/FirebaseAuth'
+import SignInSignOutButton from '@/components/auth/SignInSignOutButton'
 
 const Auth = () => {
   return (
     <div>
       <p>Sign in</p>
-      <div>
-        <FirebaseAuth />
-      </div>
+      <div></div>
     </div>
   )
 }
