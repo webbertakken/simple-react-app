@@ -5,9 +5,8 @@ Opinionated lightweight setup of nextjs on firebase with some extras.
 
 #### Prerequisites
 
-
 - Create a Firebase project
-- Enable an Authentication method
+- Enable Google Authentication method
 - Copy `.env.local.example` to `.env.local`
 
 #### Admin
@@ -18,7 +17,7 @@ Opinionated lightweight setup of nextjs on firebase with some extras.
 #### FirebaseApp
 
 - In Firebase under `Project settings` > `General` create a web application if you haven't done so already.
-- Copy the `Config` version of the `Firebase SDK snippet` and paste it in `firebaseConfig.js` in the project root.
+- Copy the `Config` version of the `Firebase SDK snippet` and paste it in `core/config.ts` under the `firebase` key.
 
 #### Database
 
@@ -27,26 +26,11 @@ Opinionated lightweight setup of nextjs on firebase with some extras.
 
 ## Deploy
 
-#### Prerequisites
+Automated by Vercel-GitHub integration (with default settings)
 
-- Upgrade Firebase project to Blaze (pay-as-you-go) plan
-- Install firebase cli
+Try it yourself: 
 
-```
-npm install -g firebase-tools
-```
-
-#### Login
-
-```
-firebase login
-```
-
-#### Build and deploy
-
-```
-yarn deploy
-```
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/webbertakken/simple-react-app)
 
 ## Customise
 
@@ -62,4 +46,4 @@ yarn deploy
 
 #### Meta information
 
-- Change the variables in `app/config.ts`
+- Change the variables in `core/config.ts`
