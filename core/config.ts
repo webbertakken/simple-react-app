@@ -1,7 +1,7 @@
 // This config is publicly exposed, do not add secrets.
 export default {
-  name: 'NextFirebasePlus',
-  title: 'Next Firebase Plus App',
+  name: 'SimpleReactApp',
+  title: 'Simple React App',
   description: 'Demonstrating some integrations',
   domainUrl: 'https://next-firebase-plus.web.app',
   creatorTwitter: '@webbertakken',
