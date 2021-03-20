@@ -1,5 +1,6 @@
-# next-firebase-plus
-Opinionated lightweight setup of nextjs on firebase with some extras.
+# Simple react app
+
+An opinionated full-stack react app with a focus on simplicity.
 
 ## Setup
 
