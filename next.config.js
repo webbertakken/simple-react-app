@@ -5,6 +5,13 @@ const withCSS = require('@zeit/next-css')
 const withLess = require('@zeit/next-less')
 const withSass = require('@zeit/next-sass')
 const withPWA = require('next-pwa')
+const withOptimizedImages = require('next-optimized-images')
+
+const isProdBuild = process.env.NODE_ENV === 'production'
+
+const baseNextConfig = {
+  target: 'serverless',
+}
 
 const lessNextConfig = {
   lessLoaderOptions: {
@@ -41,15 +48,24 @@ const sassNextConfig = {
   cssModules: true,
 }
 
+const optimizedImagesNextConfig = {
+  /**
+   * Auto-detects:
+   * - imagemin-mozjpeg
+   * - imagemin-optipng
+   * - webp-loader
+   */
+}
+
 const pwaNextConfig = {
   pwa: {
     dest: 'public',
-    disable: process.env.NODE_ENV === 'development',
+    disable: !isProdBuild,
   },
 }
 
 const compose = (plugins) => ({
-  target: 'serverless',
+  ...baseNextConfig,
 
   webpack: (config, options) => {
     config.module.rules.push(
@@ -77,6 +93,7 @@ const compose = (plugins) => ({
       return config
     }, config)
   },
+
   webpackDevMiddleware(config) {
     return plugins.reduce((config, plugin) => {
       if (Array.isArray(plugin)) {
@@ -95,9 +112,10 @@ const compose = (plugins) => ({
 })
 
 module.exports = compose([
+  isProdBuild ? [withPWA, pwaNextConfig] : null,
   [withBundleAnalyzer, { enabled: process.env.ANALYZE === 'true' }],
   [withCSS],
   [withLess, lessNextConfig],
   [withSass, sassNextConfig],
-  [withPWA, pwaNextConfig],
+  [withOptimizedImages, optimizedImagesNextConfig],
 ])
