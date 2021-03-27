@@ -110,7 +110,7 @@ const compose = (plugins) => ({
 })
 
 module.exports = compose([
-  isProdBuild ? [withPWA, pwaNextConfig] : null,
+  [withPWA],
   [withBundleAnalyzer, { enabled: process.env.ANALYZE === 'true' }],
   [withCSS],
   [withLess, lessNextConfig],
