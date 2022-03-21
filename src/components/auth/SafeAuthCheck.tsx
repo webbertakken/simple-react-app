@@ -40,8 +40,6 @@ export function SafeAuthCheck({ fallback, children, requiredClaims }: AuthCheckP
 }
 
 export function SimpleAuthCheck({ fallback, children, requiredClaims }: Omit<AuthCheckProps, 'auth'>) {
-  const auth = useAuth()
-
   return (
     <SafeAuthCheck fallback={fallback} requiredClaims={requiredClaims}>
       {children}

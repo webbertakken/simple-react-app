@@ -24,7 +24,7 @@
       "@/model/*": ["model/*"],
     }
   },
-  "exclude": ["node_modules", ".next", "out"],
+  "exclude": ["node_modules", ".next", "out", "public"],
   "include": ["next-env.d.ts",
     "src/@types/**/*", "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
 }
