@@ -6,9 +6,9 @@ import 'firebase/firestore'
 import { IconContext } from 'react-icons'
 import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
-import { reducer } from 'logic'
+import { reducer } from '../logic'
 import { FirebaseAppProvider } from 'reactfire'
-import config from 'core/config'
+import config from '../core/config'
 
 // Styles
 
