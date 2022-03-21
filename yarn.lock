@@ -2406,7 +2406,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.7.7, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.7.7, @babel/runtime@npm:^7.9.2":
   version: 7.17.8
   resolution: "@babel/runtime@npm:7.17.8"
   dependencies:
@@ -4842,7 +4842,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-redux@npm:^7.1.16":
+"@types/react-redux@npm:^7.1.16, @types/react-redux@npm:^7.1.20":
   version: 7.1.23
   resolution: "@types/react-redux@npm:7.1.23"
   dependencies:
@@ -6663,6 +6663,17 @@ __metadata:
     kind-of: ^3.2.2
     shallow-clone: ^0.1.2
   checksum: 74f9786e77e7635154500656aed7c4a7d92f9323f91c821d436ce955a6341c78a4349efa66fd109ff51672dbbe168727ef316cf05e771bd66e4160d0996c9860
+  languageName: node
+  linkType: hard
+
+"clone-deep@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "clone-deep@npm:4.0.1"
+  dependencies:
+    is-plain-object: ^2.0.4
+    kind-of: ^6.0.2
+    shallow-clone: ^3.0.0
+  checksum: 770f912fe4e6f21873c8e8fbb1e99134db3b93da32df271d00589ea4a29dbe83a9808a322c93f3bcaf8584b8b4fa6fc269fc8032efbaa6728e0c9886c74467d2
   languageName: node
   linkType: hard
 
@@ -10061,7 +10072,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.1":
+"hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.1, hoist-non-react-statics@npm:^3.3.2":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
@@ -13323,6 +13334,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"next-with-less@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "next-with-less@npm:2.0.5"
+  dependencies:
+    clone-deep: ^4.0.1
+  peerDependencies:
+    less: "*"
+    less-loader: ">= 7.0.0"
+    next: ">= 11.0.1"
+  checksum: 815f6559822770a76d8e54620249eb1851263419e1f19b116b45c908501e8143ae732f9d84d95c0b7839c8fdf26a2af4b51a16576f0f70af3b87f27f3c4ba727
+  languageName: node
+  linkType: hard
+
 "next@npm:^12.0.3":
   version: 12.1.0
   resolution: "next@npm:12.1.0"
@@ -14881,6 +14905,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-redux@npm:^7.2.6":
+  version: 7.2.6
+  resolution: "react-redux@npm:7.2.6"
+  dependencies:
+    "@babel/runtime": ^7.15.4
+    "@types/react-redux": ^7.1.20
+    hoist-non-react-statics: ^3.3.2
+    loose-envify: ^1.4.0
+    prop-types: ^15.7.2
+    react-is: ^17.0.2
+  peerDependencies:
+    react: ^16.8.3 || ^17
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: 0bf142ce0d0b80aef955650fd5e9489fca32d94f19ee23893b332f1b01ceee7bd3623337c942cbda642667d1dc9de5ac869c3c1946afa6cf2046407b57d24741
+  languageName: node
+  linkType: hard
+
 "react-shallow-renderer@npm:^16.13.1":
   version: 16.14.1
   resolution: "react-shallow-renderer@npm:16.14.1"
@@ -15866,6 +15911,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"shallow-clone@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "shallow-clone@npm:3.0.1"
+  dependencies:
+    kind-of: ^6.0.2
+  checksum: 39b3dd9630a774aba288a680e7d2901f5c0eae7b8387fc5c8ea559918b29b3da144b7bdb990d7ccd9e11be05508ac9e459ce51d01fd65e583282f6ffafcba2e7
+  languageName: node
+  linkType: hard
+
 "shebang-command@npm:^1.2.0":
   version: 1.2.0
   resolution: "shebang-command@npm:1.2.0"
@@ -15978,6 +16032,7 @@ __metadata:
     next-optimized-images: ^2.6.2
     next-pwa: ^5.0.6
     next-svgr: ^0.0.2
+    next-with-less: ^2.0.5
     null-loader: ^4.0.1
     postcss: ^8.3.11
     prettier: ^2.4.1
@@ -15986,6 +16041,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-icons: ^4.3.1
+    react-redux: ^7.2.6
     react-spring: 9.4.2
     react-test-renderer: ^17.0.2
     react-tippy: ^1.4.0

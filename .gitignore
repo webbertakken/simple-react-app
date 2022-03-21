@@ -56,5 +56,5 @@ serviceAccount.json
 /.firebase
 
 # Service worker
-src/public/service-worker.js*
-src/public/workbox-*.js*
+public/service-worker.js*
+public/workbox-*.js*

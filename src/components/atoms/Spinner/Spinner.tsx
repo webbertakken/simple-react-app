@@ -1,4 +1,4 @@
-import { CgSpinner } from 'react-icons/all'
+import { CgSpinner } from 'react-icons/cg'
 import styles from './Spinner.module.scss'
 
 interface Props {}

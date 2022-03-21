@@ -1,6 +1,6 @@
 import firebase from 'firebase/app'
 import { useState } from 'react'
-import { AiOutlineClose, AiTwotoneLock } from 'react-icons/all'
+import { AiOutlineClose, AiTwotoneLock } from 'react-icons/ai'
 import { useAuth, AuthCheck } from 'reactfire'
 import Spinner from '../atoms/Spinner/Spinner'
 
