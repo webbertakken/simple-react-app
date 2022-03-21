@@ -1,0 +1,26 @@
+{
+  "root": true,
+  "settings": {
+    "next": {
+      "rootDir": "src/"
+    }
+  },
+  // Maybe need these extend-bases again:
+  //    "eslint:recommended",
+  //    "plugin:react/recommended",
+  //    "plugin:@typescript-eslint/recommended",
+  //
+  // Includes Next.js' base ESLint configuration along with Core Web Vitals rule-set.
+  "extends": ["next/core-web-vitals", "prettier"],
+  "plugins": ["testing-library"],
+  "overrides": [
+    // Only uses Testing Library lint rules in test files
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import config from '@/core/config'
+import config from '../../core/config'
 
 const { name, title, description, domainUrl, creatorTwitter, themeColor } = config
 

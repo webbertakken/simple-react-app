@@ -1,25 +1,26 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# IDEs
 /.idea
 /.vscode
 
-# Private variables
-*.log
-serviceAccount.json
-
-# Firebase
-/.firebase
-
-# Service worker
-public/service-worker.js*
-public/workbox-*.js*
+# yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
+tsconfig.tsbuildinfo
 
 # testing
 /coverage
+/cypress/videos
 
 # next.js
 /.next/
@@ -31,6 +32,7 @@ public/workbox-*.js*
 # misc
 .DS_Store
 *.pem
+.idea/
 
 # debug
 npm-debug.log*
@@ -45,3 +47,14 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Private variables
+*.log
+serviceAccount.json
+
+# Firebase
+/.firebase
+
+# Service worker
+src/public/service-worker.js*
+src/public/workbox-*.js*

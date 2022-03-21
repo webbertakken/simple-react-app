@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // NB setting this to "react" doesn't work for .tsx files, whereas "react-jsx" does work
+    "jsx": "react-jsx"
+  }
+}
