@@ -8,6 +8,10 @@ const withOptimizedImages = require('next-optimized-images')
 const isProdBuild = process.env.NODE_ENV === 'production'
 
 const baseNextConfig = {
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
   pwa: {
     dest: 'public',
     sw: 'service-worker.js',

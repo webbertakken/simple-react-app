@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "types": ["cypress", "cypress-axe"],
+    "esModuleInterop": true,
+    "jsx": "preserve"
+  },
+  "include": ["."]
+}
