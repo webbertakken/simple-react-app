@@ -12,12 +12,15 @@
     "lint": "next lint",
     "test": "jest --watch --no-cache",
     "test:ci": "jest --ci",
+    "e2e": "cypress open",
+    "e2e:ci": "cypress run",
     "test-all": "yarn lint && yarn type-check && yarn test",
     "analyze": "cross-env-shell ANALYZE=true next build"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
+      "post-commit": "yarn run type-check",
       "pre-push": "yarn run type-check"
     }
   },
@@ -87,7 +90,7 @@
     "@typescript-eslint/parser": "^5.10.0",
     "autoprefixer": "^10.4.0",
     "axe-core": "^4.3.5",
-    "cypress": "^9.2.1",
+    "cypress": "^9.5.2",
     "cypress-axe": "^0.14.0",
     "cypress-dark": "^1.8.3",
     "eslint": "<8.0.0",

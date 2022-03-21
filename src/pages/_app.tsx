@@ -9,6 +9,8 @@ import { configureStore } from '@reduxjs/toolkit'
 import { reducer } from '../logic'
 import { FirebaseAppProvider } from 'reactfire'
 import config from '../core/config'
+import '../styles/globals.css'
+import 'react-tippy/dist/tippy.css'
 
 // Styles
 
@@ -19,11 +21,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+        <title>Simple React App</title>
         {/* viewport meta tag specifically must be in _app.tsx */}
-        <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
-        />
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5" />
       </Head>
       <Provider store={store}>
         <FirebaseAppProvider firebaseConfig={config.firebase}>

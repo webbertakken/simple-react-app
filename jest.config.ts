@@ -12,13 +12,13 @@ const config = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleDirectories: ['node_modules', '<rootDir>/node_modules', '.'],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json'],
-  testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
+  testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next|out|cypress)[/\\\\]'],
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
   collectCoverageFrom: ['**/*.{ts,tsx}', '!**/*.d.ts', '!**/node_modules/**'],
   // watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
   moduleNameMapper: {
     '\\.(css|scss)$': ['identity-obj-proxy'],
-    '\\.(jpg|jpeg|png|gif|svg)$': ['<rootDir>/test/__mocks__/fileMock.js'],
+    '\\.(jpg|jpeg|png|gif|svg)$': ['<rootDir>/tests/__mocks__/fileMock.js'],
   },
   globals: {
     'ts-jest': {
