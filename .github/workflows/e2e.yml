@@ -1,0 +1,29 @@
+name: 🤖 End to end tests
+
+# https://docs.github.com/en/actions/reference/events-that-trigger-workflows
+on: [deployment_status]
+jobs:
+  tests:
+    # only runs this job on successful deploy
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Run Cypress 🌲
+        uses: cypress-io/github-action@v2
+        env:
+          CYPRESS_BASE_URL: ${{ github.event.deployment_status.target_url }}
+# Re-enable recording after https://github.com/cypress-io/github-action/issues/483
+# ------------------------------
+          CYPRESS_VIDEO_RECORDING: 0
+#      - name: Upload video 📼
+#        uses: actions/upload-artifact@v2
+#        if: always()
+#        with:
+#          name: Test videos
+#          path: cypress/videos
+#          retention-days: 14
+# ------------------------------
