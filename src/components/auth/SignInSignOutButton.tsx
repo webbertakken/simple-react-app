@@ -1,8 +1,8 @@
-import { Button } from 'antd'
 import firebase from 'firebase/app'
 import { useState } from 'react'
-import { AiOutlineClose, AiTwotoneLock } from 'react-icons/all'
+import { AiOutlineClose, AiTwotoneLock } from 'react-icons/ai'
 import { useAuth, AuthCheck } from 'reactfire'
+import Spinner from '../atoms/Spinner/Spinner'
 
 const loadingDelay = async (delayMs = 100) => {
   return new Promise((resolve) => setTimeout(() => resolve('loading'), delayMs))
@@ -41,17 +41,20 @@ const SignInSignOutButton = (props) => {
   }
 
   return (
-    <Button
+    <button
       {...props}
       onClick={auth.currentUser ? signOut : signIn}
-      loading={isLoading}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <AuthCheck fallback={<AiTwotoneLock />}>
-        {isHovered ? <AiOutlineClose color="#ff4d4f" /> : <AiTwotoneLock color="#52c41a" />}
-      </AuthCheck>
-    </Button>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <AuthCheck fallback={<AiTwotoneLock />}>
+          {isHovered ? <AiOutlineClose color="#ff4d4f" /> : <AiTwotoneLock color="#52c41a" />}
+        </AuthCheck>
+      )}
+    </button>
   )
 }
 

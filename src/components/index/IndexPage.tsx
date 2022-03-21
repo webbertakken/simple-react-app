@@ -1,5 +1,5 @@
 import React from 'react'
-import SignInSignOutButton from '@/components/auth/SignInSignOutButton'
+import SignInSignOutButton from '../auth/SignInSignOutButton'
 
 const IndexPage = (props) => <SignInSignOutButton />
 

@@ -1,4 +1,4 @@
-import SignInSignOutButton from '@/components/auth/SignInSignOutButton'
+import SignInSignOutButton from '../components/auth/SignInSignOutButton'
 
 const fetcher = (url, token) =>
   fetch(url, {
