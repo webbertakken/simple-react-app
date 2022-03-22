@@ -26,6 +26,7 @@ tsconfig.tsbuildinfo
 # next.js
 /.next/
 /out/
+/extension/
 
 # production
 /build

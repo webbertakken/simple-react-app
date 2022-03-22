@@ -5,13 +5,8 @@ const withPWA = require('next-pwa')
 const withLess = require('next-with-less')
 const withOptimizedImages = require('next-optimized-images')
 
-const isProdBuild = process.env.NODE_ENV === 'production'
-
 const baseNextConfig = {
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
-  },
+  assetPrefix: './', // needed for when using `next export`
   pwa: {
     dest: 'public',
     sw: 'service-worker.js',
