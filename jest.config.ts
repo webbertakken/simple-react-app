@@ -1,5 +1,3 @@
-import { pathsToModuleNameMapper } from 'ts-jest/utils'
-
 /**
  * Based on https://github.com/vercel/next.js/issues/8663#issuecomment-802289395
  *
@@ -12,7 +10,7 @@ const config = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleDirectories: ['node_modules', '<rootDir>/node_modules', '.'],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json'],
-  testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next|out|cypress)[/\\\\]'],
+  testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next|out|extension|cypress)[/\\\\]'],
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
   collectCoverageFrom: ['**/*.{ts,tsx}', '!**/*.d.ts', '!**/node_modules/**'],
   // watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],

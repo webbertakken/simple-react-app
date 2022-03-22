@@ -1,6 +1,7 @@
 {
   "name": "Simple React App",
-  "short_name": "NFP",
+  "short_name": "SRA",
+  "description": "A simple example react app with great defaults",
   "theme_color": "#e011c1",
   "background_color": "#e011c1",
   "display": "standalone",

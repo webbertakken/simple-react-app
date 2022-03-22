@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
-    "convert": "ts-node tools/convert",
+    "extension": "yarn export && ts-node tools/convertNextExportIntoExtension",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "lint": "next lint",
