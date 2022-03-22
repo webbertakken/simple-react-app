@@ -36,9 +36,27 @@ const manifestAddon = {
   )
 
   // Update manifest with extension specific parameters
-  const manifestFile = await readFile(`${nextJsOutDirectory}/manifest.json`, 'utf8')
-  const manifest = Buffer.from(JSON.stringify({ ...JSON.parse(manifestFile.toString()), ...manifestAddon }, null, 2))
-  await writeFile(`${nextJsOutDirectory}/manifest.json`, manifest, 'utf8')
+  console.log('Updating manifest file...')
+  const originalManifest = JSON.parse((await readFile(`${nextJsOutDirectory}/manifest.json`, 'utf8')).toString())
+
+  /* Icons go from array format to object format
+   * Accepted format: https://developer.mozilla.org/en-US/docs/Web/Manifest/icons
+   * Produced format: https://developer.chrome.com/docs/extensions/mv3/manifest/icons/
+   */
+  let icons = originalManifest.icons
+  if (Array.isArray(icons) && !manifestAddon.hasOwnProperty('icons')) {
+    console.log('Reformatting icons array to extension manifest format...')
+    icons = icons.reduce((result, { src, sizes }) => {
+      const size = sizes.split('x')[0] // '32x32' becomes '32'
+      result[size] = src // "32": "path/to/file"
+
+      return result
+    }, {})
+    console.log(icons)
+  }
+
+  const manifest = { ...originalManifest, icons, ...manifestAddon }
+  await writeFile(`${nextJsOutDirectory}/manifest.json`, Buffer.from(JSON.stringify(manifest, null, 2)), 'utf8')
 
   // Move processed export to extension folder
   console.log(`Creating extension from next build...`)
