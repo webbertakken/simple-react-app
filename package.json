@@ -104,7 +104,7 @@
     "jest": "^27.3.1",
     "jest-watch-typeahead": "^1.0.0",
     "lint-staged": "10.0.10",
-    "postcss": "^8.4.12",
+    "postcss": "^8.4.31",
     "prettier": "^2.4.1",
     "react-test-renderer": "^17.0.2",
     "redux-devtools": "^3.7.0",
